@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feliz Aniversário, Meu Amor</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #000000, #ff4e8c);
+            color: white;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        header {
+            padding: 50px 20px;
+        }
+        header h1 {
+            font-size: 2.5em;
+            animation: fadeIn 2s ease-in-out;
+        }
+        #mensagem {
+            font-size: 1.2em;
+            max-width: 600px;
+            margin: 20px auto;
+            line-height: 1.6;
+            animation: fadeIn 3s ease-in-out;
+            white-space: pre-wrap;
+        }
+        @keyframes fadeIn {
+            from {opacity: 0; transform: translateY(20px);}
+            to {opacity: 1; transform: translateY(0);}
+        }
+        .galeria {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            padding: 30px;
+        }
+        .galeria img {
+            width: 100%;
+            border-radius: 15px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.5);
+            transition: transform 0.3s;
+        }
+        .galeria img:hover {
+            transform: scale(1.05);
+        }
+        footer {
+            padding: 20px;
+            font-size: 0.9em;
+            background: rgba(0,0,0,0.3);
+        }
+        audio {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Feliz Aniversário, Meu Amor ❤️</h1>
+        <p id="mensagem"></p>
+    </header>
+
+    <section class="galeria">
+        <img src="foto1.jpg" alt="Momentos juntos">
+        <img src="foto2.jpg" alt="Momentos juntos">
+        <img src="foto3.jpg" alt="Momentos juntos">
+        <img src="foto4.jpg" alt="Momentos juntos">
+    </section>
+
+    <audio controls autoplay loop>
+        <source src="musica.mp3" type="audio/mpeg">
+        Seu navegador não suporta áudio.
+    </audio>
+
+    <footer>
+        Feito com todo o amor do mundo da sua princesa para você ❤️
+    </footer>
+
+    <script>
+        const texto = `Há 23 anos atrás nascia o amor da minha vida. Mo, que privilégio é ter te conhecido e poder compartilhar a vida com você.
+Hoje não quero apenas te parabenizar por mais um ano de vida, mas celebrar o homem incrível que você é: amoroso, prestativo, companheiro, meu melhor amigo, confidente e, acima de tudo, o meu amor.
+
+Que essa data se repita por muitos e muitos anos, e que eu possa estar ao seu lado em cada um deles. Te desejo todas as coisas mais lindas desse mundo e que você conquiste tudo o que sonhar — porque eu sei que você consegue. E eu estarei sempre aqui, te apoiando em cada passo.
+
+Te amo, meu bem. Feliz aniversário! ❤️`;
+        let i = 0;
+        const speed = 40;
+        function typeWriter() {
+            if (i < texto.length) {
+                document.getElementById("mensagem").innerHTML += texto.charAt(i);
+                i++;
+                setTimeout(typeWriter, speed);
+            }
+        }
+        typeWriter();
+    </script>
+</body>
+</html>
